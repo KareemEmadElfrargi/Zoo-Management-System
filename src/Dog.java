@@ -1,8 +1,8 @@
 public class Dog extends AnimalImp{
     private String breed;
 
-    public Dog(int age, String species, double weight, boolean isHealthy) {
-        super("Dog", age, species, weight, isHealthy);
+    public Dog(String name ,int age, double weight, boolean isHealthy) {
+        super(name, age, "Dog", weight, isHealthy);
     }
 
 

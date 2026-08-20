@@ -3,8 +3,8 @@ public class Bird extends AnimalImp{
     private boolean canFly;
 
 
-    public Bird(String name, int age, String species, double weight, boolean isHealthy,double wingSpan, boolean canFly) {
-        super("Bird", age, species, weight, isHealthy);
+    public Bird(String name, int age, double weight, boolean isHealthy,double wingSpan, boolean canFly) {
+        super(name, age, "Bird", weight, isHealthy);
         setWingSpan(wingSpan);
         setCanFly(canFly);
     }

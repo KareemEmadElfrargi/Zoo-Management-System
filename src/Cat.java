@@ -3,8 +3,8 @@ public class Cat extends AnimalImp{
     private boolean isIndoor;
 
 
-    public Cat(int age, String species, double weight, boolean isHealthy,String furColor, boolean isIndoor) {
-        super("Cat", age, species, weight, isHealthy);
+    public Cat(String name ,int age, double weight, boolean isHealthy,String furColor, boolean isIndoor) {
+        super(name, age, "Cat", weight, isHealthy);
         setFurColor(furColor);
         setIndoor(isIndoor);
     }
