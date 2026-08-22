@@ -55,6 +55,21 @@ public class Zoo {
             System.out.printf("%s has been removed from %s.%n", animal.getName(), zooName);
         } else System.out.printf("Animal with name %s not found in %s.%n", name, zooName);
     }
+    public void healAnimal(String name){
+        AnimalImp animal = findAnimalByName(name);
+        animal.setHealthy(true);
+        System.out.println("Animal with name " + name + " has been healed.");
+    }
+
+    public ArrayList<AnimalImp> getUnhealthyAnimals(){
+        ArrayList<AnimalImp> unhealthyAnimals = new ArrayList<>();
+        for (AnimalImp animal : animals){
+            if (animal.isHealthy()) {
+                unhealthyAnimals.add(animal);
+            }
+        }
+        return unhealthyAnimals;
+    }
 
     public void feedAllAnimals(){
         for (AnimalImp animal : animals) {
@@ -97,6 +112,30 @@ public class Zoo {
         }
         System.out.printf("Healthy Animals: %d%n", healthyCount);
 
+        AnimalImp oldestAnimal = animals.getFirst();
+
+        for (AnimalImp animal : animals){
+            if (animal.getAge() > oldestAnimal.getAge()){
+                oldestAnimal = animal;
+            }
+        }
+        System.out.printf("Oldest Animal: %s%n", oldestAnimal.getName());
+
+    }
+    public void getHeaviestAnimal(){
+        AnimalImp heaviestAnimal = animals.getFirst();
+        for (AnimalImp animal : animals){
+            if (animal.getWeight() > heaviestAnimal.getWeight()){
+                heaviestAnimal = animal;
+            }
+
+        }
+    }
+    public double getTotalWeight(){
+        double totalWeight = 0;
+        for (AnimalImp animal : animals){
+            totalWeight += animal.getWeight();
+        }
     }
     public void searchBySpecies(String species){
         for (AnimalImp animal : animals) {
