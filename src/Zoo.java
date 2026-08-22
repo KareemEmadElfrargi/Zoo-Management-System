@@ -136,6 +136,7 @@ public class Zoo {
         for (AnimalImp animal : animals){
             totalWeight += animal.getWeight();
         }
+        return totalWeight;
     }
     public void searchBySpecies(String species){
         for (AnimalImp animal : animals) {
